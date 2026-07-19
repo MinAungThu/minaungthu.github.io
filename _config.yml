@@ -410,7 +410,7 @@ enable_medium_zoom: true # enables image zoom feature (as on medium.com)
 enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
 enable_bgm: true # enables autoplaying background music with a mute toggle
-bgm_path: /assets/audio/beethoven-archduke-andante.mp3 # path to the background music file
+bgm_path: /assets/audio/LudwigVonBeethoven-TrioNumber7InBFlatOpus97-Band1-AllegroModerato.mp3 # path to the background music file
 
 # -----------------------------------------------------------------------------
 # Library versions
@@ -435,6 +435,9 @@ third_party_libraries:
     url:
       js: "https://cdn.jsdelivr.net/npm/chart.js@{{version}}/dist/chart.umd.min.js"
     version: "4.4.1"
+  computer_modern:
+    url:
+      fonts: "https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@f55b094cc91a643fecde154bb7ddb6fd9fed1b54/fonts/serif.css"
   d3:
     integrity:
       js: "sha256-1rA678n2xEx7x4cTZ5x4wpUCj6kUMZEZ5cxLSVSFWxw="
@@ -461,7 +464,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Roboto:300,400,500,700&family=Roboto+Slab:100,300,400,500,700&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Roboto:300,400,500,700&family=Roboto+Slab:100,300,400,500,700&display=swap"
   highlightjs:
     integrity:
       css:

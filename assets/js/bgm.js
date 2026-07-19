@@ -30,6 +30,9 @@
       audio.muted = false;
       updateIcon();
     }
+    // Some browsers (notably iOS Safari) can end up paused even with the
+    // autoplay attribute set, so make sure playback is actually running.
+    audio.play().catch(function () {});
     document.removeEventListener("click", unmuteOnFirstInteraction);
     document.removeEventListener("keydown", unmuteOnFirstInteraction);
     document.removeEventListener("touchstart", unmuteOnFirstInteraction);
@@ -43,6 +46,7 @@
     document.addEventListener("touchstart", unmuteOnFirstInteraction, { once: true });
   }
   updateIcon();
+  audio.play().catch(function () {});
 
   toggle.addEventListener("click", function () {
     audio.muted = !audio.muted;
