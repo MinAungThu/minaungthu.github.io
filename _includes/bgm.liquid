@@ -1,0 +1,5 @@
+{% if site.enable_bgm %}
+  <audio id="bgm-audio" src="{{ site.bgm_path | relative_url }}" autoplay muted loop preload="auto"></audio>
+  <button id="bgm-toggle" class="bgm-toggle" type="button" aria-label="Mute background music">🔇</button>
+  <script defer src="{{ '/assets/js/bgm.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
