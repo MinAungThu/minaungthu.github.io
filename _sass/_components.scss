@@ -90,11 +90,11 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// About hero (photo + bio side-by-side, vertically centered)
+// About hero (photo + name/bio side-by-side, photo top-aligned with name)
 
 .about-hero {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   margin-bottom: 1.5rem;
 
