@@ -23,6 +23,8 @@
     toggle.setAttribute("aria-label", audio.muted ? "Unmute background music" : "Mute background music");
   }
 
+  var INTERACTION_EVENTS = ["click", "keydown", "touchstart", "scroll", "mousemove", "wheel"];
+
   // Browsers allow autoplay only when muted; unmute on first interaction
   // unless the visitor had already muted it themselves on a previous page.
   function unmuteOnFirstInteraction() {
@@ -33,17 +35,17 @@
     // Some browsers (notably iOS Safari) can end up paused even with the
     // autoplay attribute set, so make sure playback is actually running.
     audio.play().catch(function () {});
-    document.removeEventListener("click", unmuteOnFirstInteraction);
-    document.removeEventListener("keydown", unmuteOnFirstInteraction);
-    document.removeEventListener("touchstart", unmuteOnFirstInteraction);
+    INTERACTION_EVENTS.forEach(function (evt) {
+      document.removeEventListener(evt, unmuteOnFirstInteraction);
+    });
   }
 
   if (userMuted) {
     audio.muted = true;
   } else {
-    document.addEventListener("click", unmuteOnFirstInteraction, { once: true });
-    document.addEventListener("keydown", unmuteOnFirstInteraction, { once: true });
-    document.addEventListener("touchstart", unmuteOnFirstInteraction, { once: true });
+    INTERACTION_EVENTS.forEach(function (evt) {
+      document.addEventListener(evt, unmuteOnFirstInteraction, { once: true, passive: true });
+    });
   }
   updateIcon();
   audio.play().catch(function () {});
