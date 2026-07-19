@@ -407,6 +407,11 @@ ninja.data = [{
           description: "TSMC 0.18 µm CMOS, 3-bit switched-capacitor bank",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_lc_vco/";
+            },},{id: "projects-5-23-5-86-ghz-complementary-lc-vco",
+          title: '5.23–5.86 GHz Complementary LC-VCO',
+          description: "TSMC 0.18 µm CMOS, 3-bit switched-capacitor bank",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_mixer/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
