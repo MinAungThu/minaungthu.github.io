@@ -26,6 +26,15 @@ h6 {
   letter-spacing: 0.03em;
 }
 
+.post-header .desc {
+  font-family: "Computer Modern Serif", "Georgia", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--global-theme-color);
+  margin-top: 0.25rem;
+}
+
 p,
 h1,
 h2,
