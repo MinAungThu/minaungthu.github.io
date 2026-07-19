@@ -2,7 +2,7 @@
 layout: page
 title: 5.23–5.86 GHz Complementary LC-VCO
 description: TSMC 0.18 µm CMOS, 3-bit switched-capacitor bank
-importance: 1
+importance: 2
 category: work
 ---
 
