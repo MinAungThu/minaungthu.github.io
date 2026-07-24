@@ -407,9 +407,9 @@ ninja.data = [{
           description: "TSMC 0.18 µm CMOS, 3-bit switched-capacitor bank",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_lc_vco/";
-            },},{id: "projects-5-23-5-86-ghz-complementary-lc-vco",
-          title: '5.23–5.86 GHz Complementary LC-VCO',
-          description: "TSMC 0.18 µm CMOS, 3-bit switched-capacitor bank",
+            },},{id: "projects-5-5-ghz-gilbert-cell-down-conversion-mixer",
+          title: '5.5 GHz Gilbert-Cell Down-Conversion Mixer',
+          description: "TSMC 0.18 µm RF CMOS, double-balanced Gilbert cell",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_mixer/";
             },},{id: "teachings-data-science-fundamentals",
