@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 5.5 GHz Gilbert-Cell Down-Conversion Mixer
+title: 5.5 GHz Gilbert-Cell Mixer
 description: TSMC 0.18 µm RF CMOS, double-balanced Gilbert cell
 importance: 2
 category: work
