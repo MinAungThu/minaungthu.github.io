@@ -8,6 +8,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p>Junior Year Student</p>
+    <p>Robotics &amp; Automation Systems Engineering</p>
+    <p>Kasetsart University</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
