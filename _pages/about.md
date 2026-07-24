@@ -8,9 +8,6 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Junior Year Student</p>
-    <p>Robotics &amp; Automation Systems Engineering</p>
-    <p>Kasetsart University</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -25,6 +22,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+<p class="text-muted" style="margin-top: -0.75rem; font-size: 0.95rem;">Junior Year Student, Robotics &amp; Automation Systems Engineering, Kasetsart University</p>
 
 I love designing at the transistor level, where the theory and the silicon meet.
 
