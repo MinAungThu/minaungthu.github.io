@@ -8,4 +8,6 @@ category: work
 
 A double-balanced Gilbert-cell down-conversion mixer for the 5 GHz WLAN band, designed and characterized at the schematic level in TSMC 0.18 µm RF CMOS. Down-converts a 5.5 GHz RF input to 200 MHz IF using a 5.3 GHz LO.
 
-[Full report (PDF)](/assets/pdf/mixer.pdf)
+<iframe src="/assets/pdf/mixer.pdf" width="100%" height="800px" style="border: 1px solid var(--global-divider-color, #ccc); border-radius: 4px;"></iframe>
+
+[Open full report in new tab](/assets/pdf/mixer.pdf){:target="_blank"}
