@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Personal Projects
+title: Projects
 permalink: /projects/
 description: Personally, I like studying fundamentals and solidifying my foundations to build strong intuitive understanding.  This is a collection of custom integrated circuit designs focusing on fundamentals and first principles. 
 nav: true
