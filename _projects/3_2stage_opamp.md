@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Two-Stage Miller-Compensated CMOS Op-Amp
-description: TSMC 0.18 µm CMOS, corrected output stage from a published design
+title: Reproducing 2 stage CMOS Op-Amp
+description: TSMC 0.18 µm CMOS, reproducing a research paper for study purposes
 img: /assets/img/projects/2stage_opamp/opamp_schematic.png
 importance: 3
 category: work
