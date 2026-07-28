@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Reproducing 2 stage CMOS Op-Amp
-description: TSMC 0.18 µm CMOS, reproducing a research paper for study purposes
+title: Reproducing 2 stage CMOS Op-Amp with new 2nd stage design
+description: TSMC 0.18 µm CMOS, reproducing a research paper with new 2nd stage design 
 img: /assets/img/projects/2stage_opamp/opamp_schematic.png
 importance: 3
 category: work
@@ -17,9 +17,9 @@ NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-sou
 
 _Schematics of the circuit_
 
-## Difference from the paper
+## New Second Stage Device Design
 
-The reference specifies the second-stage device at minimum length (0.18 µm) while all others use 1 µm, to raise its transconductance. This conflicts with the systematic-offset condition stated elsewhere in the same paper. Applying the reference sizing, the DC output settled at **1.42 V** on a 1.8 V supply. The operating point:
+The reference paper specifies the second-stage device at minimum length (0.18 µm) while all others use 1 µm, to raise its transconductance. This conflicts with the systematic-offset condition stated elsewhere in the same paper. Applying the reference sizing, the DC output settled at **1.42 V** on a 1.8 V supply. The operating point:
 
 | Quantity                       | Value                  |
 | ------------------------------ | ---------------------- |
