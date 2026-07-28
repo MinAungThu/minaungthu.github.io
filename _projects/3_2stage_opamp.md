@@ -11,13 +11,13 @@ A two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic lev
 
 ## Architecture
 
-NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6). Miller capacitor Cc with nulling resistor Rc compensates around the second stage; a diode-connected reference (M8) mirrors bias to the tail (M7) and load (M6). All signal devices use L = 1 µm; intrinsic gain collapses at minimum length in this process, so the target DC gain is unreachable otherwise.
+NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6). Miller capacitor Cc with nulling resistor Rc compensates around the second stage; a diode-connected reference (M8) mirrors bias to the tail (M7) and load (M6). All signal devices use L = 1 µm; intrinsic gain collapses at minimum length in this process, rendering the target DC gain unreachable. 
 
 {% include figure.liquid path="/assets/img/projects/2stage_opamp/opamp_schematic.png" class="img-fluid rounded z-depth-1" %}
 
-_(Labels follow this schematic; the second-stage common-source device is M3 here, M6 in [1].)_
+_Schematics of the circuit_
 
-## Diagnosis
+## Difference from the paper
 
 The reference specifies the second-stage device at minimum length (0.18 µm) while all others use 1 µm, to raise its transconductance. This conflicts with the systematic-offset condition stated elsewhere in the same paper. Applying the reference sizing, the DC output settled at **1.42 V** on a 1.8 V supply. The operating point:
 
@@ -27,7 +27,8 @@ The reference specifies the second-stage device at minimum length (0.18 µm) whi
 | \|V_OV\| = \|V_GS\| − \|V_TH\| | 1.26 − ≈0.45 = ≈0.81 V |
 | \|V_DS\| vs \|V_OV\|           | 0.38 V < 0.81 V        |
 
-\|V_DS\| < \|V_OV\| is the textbook triode condition. \|V_TH\| here is an approximation rather than a direct measurement, so this points toward the second stage operating in triode rather than confirming it outright, but it lines up with the rest of the evidence: in triode the output device's r_o would collapse, which would explain why the second stage contributes little gain and Miller pole-splitting fails, matching the observed insensitivity of DC gain to bias and loss of Cc's authority over GBW. The fix re-sizes the device to L = 1 µm and re-derives W ≈ 85 µm from the zero-offset condition, returning the output to mid-rail with both output devices saturated. DC gain then rose from ~73 dB to ~80 dB and the amplifier responded to compensation as expected.
+\|V_DS\| < \|V_OV\| is the textbook triode condition. \|V_TH\| here is an approximation rather than a direct measurement. This triode region possibility was assumed as the second stage contributes little gain and Miller pole-splitting fails, matching the observed insensitivity of DC gain to bias and loss of Cc's authority over GBW. I have resized 
+the device to L = 1 µm and re-derived W ≈ 85 µm from the zero-offset condition, returning the output to mid-rail with both output devices saturated. DC gain then rose from ~73 dB to ~80 dB and the amplifier responded to compensation as expected.
 
 ## Results
 
@@ -81,9 +82,9 @@ Higher gain (+12.6 dB), phase margin (+9°), swing, and lower power (−35%) tha
 
 ## Limitations
 
-- The triode result may depend partly on this PDK's device models; the operating point and saturation inequality are direct measurements, but their attribution to the reference sizing is an inference consistent with the paper's internal inconsistency, not an independently confirmed claim.
+- The output device seemingly operated in triode under the reference sizing in this PDK. Whether this is due to the reference design itself or a difference between its device models and TSMC's is not discussed here as the same nominal sizing could saturate under different model parameters.
 - Compensation used ideal Cc/Rc (real MIM/poly models gave negligible change; no parasitic extraction). The ideal current-source bias makes the measured PSRR non-physical.
-- No corner or Monte-Carlo analysis yet. The 11° of phase-margin headroom leaves room for it. Corner/mismatch validation and post-layout extraction are the next steps.
+- I have yet to implement corner or Monte-Carlo analysis. Corner/mismatch validation and post-layout extraction are the next steps.
 
 ## Reference
 
