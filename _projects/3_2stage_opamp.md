@@ -7,7 +7,7 @@ importance: 3
 category: work
 ---
 
-A two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic level), designed as a reproduction of a published reference [1]. Applying the reference sizing directly produced a second stage that operated in triode mode, with the output pinned near the rail, possibly owing to the use of non-ideal compensation capacitors and resistors. Re-deriving the output-device sizing from the reference's own zero-offset condition returned the stage to saturation and improved gain, phase margin, and power. Final performance: **80.1 dB gain, 35.3 MHz GBW, 71° phase margin, 133 µW** at 1.8 V.
+A two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic level), designed as a reproduction of a published reference [1]. Applying the reference sizing directly produced a second stage that operated in triode mode, with the output pinned near the rail. Re-deriving the output-device sizing from the reference's own zero-offset condition returned the stage to saturation and improved gain, phase margin, and power. Final performance: **80.1 dB gain, 35.3 MHz GBW, 71° phase margin, 133 µW** at 1.8 V.
 
 ## Architecture
 
