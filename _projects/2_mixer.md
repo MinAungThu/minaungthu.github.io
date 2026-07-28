@@ -2,6 +2,7 @@
 layout: page
 title: 5.5 GHz Gilbert-Cell Mixer
 description: TSMC 0.18 µm RF CMOS, double-balanced Gilbert cell
+img: /assets/img/projects/mixer_schematic.png
 importance: 2
 category: work
 ---
