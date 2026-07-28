@@ -412,9 +412,9 @@ ninja.data = [{
           description: "TSMC 0.18 µm RF CMOS, double-balanced Gilbert cell",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_mixer/";
-            },},{id: "projects-reproducing-2-stage-cmos-op-amp",
-          title: 'Reproducing 2 stage CMOS Op-Amp',
-          description: "TSMC 0.18 µm CMOS, reproducing a research paper for study purposes",
+            },},{id: "projects-reproducing-2-stage-cmos-op-amp-with-new-2nd-stage-design",
+          title: 'Reproducing 2 stage CMOS Op-Amp with new 2nd stage design',
+          description: "TSMC 0.18 µm CMOS, reproducing a research paper with new 2nd stage design",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_2stage_opamp/";
             },},{id: "teachings-data-science-fundamentals",
