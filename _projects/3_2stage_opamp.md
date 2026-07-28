@@ -76,7 +76,8 @@ Supply rejection was swept with AC injected on the rail. The measured value is d
 | ICMR                       | 0.62 – 1.62 V   | —                |
 | Power                      | 133 µW          | 204 µW           |
 
-Higher gain (+12.6 dB), phase margin (+9°), swing, and lower power (−35%) than the reference. GBW is lower: that figure comes from the minimum-length output device (the same sizing choice implicated in the triode condition above), so the design trades bandwidth for a fully-saturated operating point.
+
+Higher gain (+12.6 dB), phase margin (+9°), swing, and lower power (−35%) than the reference. GBW is lower, as that figure comes from the minimum-length output device (the same sizing choice implicated in the triode condition above), so the design trades bandwidth for a fully-saturated operating point.
 
 **Final sizing:** M1/M2 50/1, M3 85/1, M4/M5 20/1, M6 30/1, M7 39/1, M8 10/1 µm. Cc = 2 pF, Rc = 5.5 kΩ, I_ref = 10 µA, C_L = 1 pF, V_CM = 0.9 V.
 
