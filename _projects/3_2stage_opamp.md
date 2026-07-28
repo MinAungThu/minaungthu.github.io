@@ -15,17 +15,17 @@ NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-sou
 
 {% include figure.liquid path="/assets/img/projects/2stage_opamp/opamp_schematic.png" class="img-fluid rounded z-depth-1" %}
 
-*(Labels follow this schematic; the second-stage common-source device is M3 here, M6 in [1].)*
+_(Labels follow this schematic; the second-stage common-source device is M3 here, M6 in [1].)_
 
 ## Diagnosis
 
 The reference specifies the second-stage device at minimum length (0.18 µm) while all others use 1 µm, to raise its transconductance. This conflicts with the systematic-offset condition stated elsewhere in the same paper. Applying the reference sizing, the DC output settled at **1.42 V** on a 1.8 V supply. The operating point confirmed the cause:
 
-| Quantity | Value |
-|---|---|
-| \|V_DS\| | 1.8 − 1.42 = 0.38 V |
+| Quantity                       | Value                  |
+| ------------------------------ | ---------------------- |
+| \|V_DS\|                       | 1.8 − 1.42 = 0.38 V    |
 | \|V_OV\| = \|V_GS\| − \|V_TH\| | 1.26 − ≈0.45 = ≈0.81 V |
-| \|V_DS\| > \|V_OV\| ? | **no → triode** |
+| \|V_DS\| > \|V_OV\| ?          | **no → triode**        |
 
 In triode the output device's r_o collapses, so the second stage contributes little gain and Miller pole-splitting fails — DC gain became insensitive to bias and Cc lost authority over GBW. The fix re-sizes the device to L = 1 µm and re-derives W ≈ 85 µm from the zero-offset condition, returning the output to mid-rail with both output devices saturated. DC gain then rose from ~73 dB to ~80 dB and the amplifier responded to compensation as expected.
 
@@ -63,17 +63,17 @@ Supply rejection was swept with AC injected on the rail. The measured value is d
 
 ### Measured performance
 
-| Parameter | This design | Reference [1] |
-|---|---|---|
-| DC gain | 80.1 dB | 67.5 dB |
-| GBW | 35.3 MHz | 131.9 MHz |
-| Phase margin | 71.1° | 61.8° |
-| Slew rate (rise / fall) | 20.5 / 9.3 V/µs | 29.7 / 12.6 V/µs |
-| Settling, 1% (rise / fall) | 88 / 170 ns | — |
-| CMRR | 87 dB | 88.4 dB |
-| Output swing | 1.00 V_pp | 936 mV_pp |
-| ICMR | 0.62 – 1.62 V | — |
-| Power | 133 µW | 204 µW |
+| Parameter                  | This design     | Reference [1]    |
+| -------------------------- | --------------- | ---------------- |
+| DC gain                    | 80.1 dB         | 67.5 dB          |
+| GBW                        | 35.3 MHz        | 131.9 MHz        |
+| Phase margin               | 71.1°           | 61.8°            |
+| Slew rate (rise / fall)    | 20.5 / 9.3 V/µs | 29.7 / 12.6 V/µs |
+| Settling, 1% (rise / fall) | 88 / 170 ns     | —                |
+| CMRR                       | 87 dB           | 88.4 dB          |
+| Output swing               | 1.00 V_pp       | 936 mV_pp        |
+| ICMR                       | 0.62 – 1.62 V   | —                |
+| Power                      | 133 µW          | 204 µW           |
 
 Higher gain (+12.6 dB), phase margin (+9°), swing, and lower power (−35%) than the reference. GBW is lower: that figure comes from the minimum-length output device — the same choice that caused the triode condition — so the design trades bandwidth for a fully-saturated operating point.
 
