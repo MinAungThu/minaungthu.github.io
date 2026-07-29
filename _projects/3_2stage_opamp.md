@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reproducing 2 stage CMOS Op-Amp with new 2nd stage design
-description: TSMC 0.18 µm CMOS, reproducing a research paper with new 2nd stage design 
+description: TSMC 0.18 µm CMOS, reproducing a research paper with new 2nd stage design
 img: /assets/img/projects/2stage_opamp/opamp_schematic.png
 importance: 3
 category: work
@@ -11,7 +11,7 @@ A two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic lev
 
 ## Architecture
 
-NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6). Miller capacitor Cc with nulling resistor Rc compensates around the second stage; a diode-connected reference (M8) mirrors bias to the tail (M7) and load (M6). All signal devices use L = 1 µm; intrinsic gain collapses at minimum length in this process, rendering the target DC gain unreachable. 
+NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6). Miller capacitor Cc with nulling resistor Rc compensates around the second stage; a diode-connected reference (M8) mirrors bias to the tail (M7) and load (M6). All signal devices use L = 1 µm; intrinsic gain collapses at minimum length in this process, rendering the target DC gain unreachable.
 
 {% include figure.liquid path="/assets/img/projects/2stage_opamp/opamp_schematic.png" class="img-fluid rounded z-depth-1" %}
 
@@ -27,7 +27,7 @@ The reference paper specifies the second-stage device at minimum length (0.18 µ
 | \|V_OV\| = \|V_GS\| − \|V_TH\| | 1.26 − ≈0.45 = ≈0.81 V |
 | \|V_DS\| vs \|V_OV\|           | 0.38 V < 0.81 V        |
 
-\|V_DS\| < \|V_OV\| is the textbook triode condition. \|V_TH\| here is an approximation rather than a direct measurement. This triode region possibility was assumed as the second stage contributes little gain and Miller pole-splitting fails, matching the observed insensitivity of DC gain to bias and loss of Cc's authority over GBW. I have resized 
+\|V_DS\| < \|V_OV\| is the textbook triode condition. \|V_TH\| here is an approximation rather than a direct measurement. This triode region possibility was assumed as the second stage contributes little gain and Miller pole-splitting fails, matching the observed insensitivity of DC gain to bias and loss of Cc's authority over GBW. I have resized
 the device to L = 1 µm and re-derived W ≈ 85 µm from the zero-offset condition, returning the output to mid-rail with both output devices saturated. DC gain then rose from ~73 dB to ~80 dB and the amplifier responded to compensation as expected.
 
 ## Results
@@ -75,7 +75,6 @@ Supply rejection was swept with AC injected on the rail. The measured value is d
 | Output swing               | 1.00 V_pp       | 936 mV_pp        |
 | ICMR                       | 0.62 – 1.62 V   | —                |
 | Power                      | 133 µW          | 204 µW           |
-
 
 Higher gain (+12.6 dB), phase margin (+9°), swing, and lower power (−35%) than the reference. GBW is lower, as that figure comes from the minimum-length output device (the same sizing choice implicated in the triode condition above), so the design trades bandwidth for a fully-saturated operating point.
 
