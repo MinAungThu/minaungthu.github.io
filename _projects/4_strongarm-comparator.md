@@ -2,7 +2,7 @@
 layout: page
 title: StrongARM Latched Comparator
 description: TSMC 0.18 µm CMOS — design, verification, and regeneration-time extraction
-img: assets/img/projects/comparator/comparator_schematic.png
+img: assets/img/projects/comparator/comparator_schematics.png
 importance: 2
 category: Analog / Mixed-Signal IC Design
 ---
@@ -28,7 +28,7 @@ During reset (CLK low), the tail transistor is turned off while the precharge tr
 
 During evaluation (CLK high), the tail transistor turns on and the differential input pair begins discharging the internal nodes. Any voltage difference between the two inputs creates a small imbalance, which is rapidly amplified once the cross-coupled latch enters regeneration. Positive feedback then drives one output to VDD and the other to ground, producing a full-swing digital decision every clock cycle.
 
-{% include figure.liquid path="assets/img/projects/comparator/comparator_schematic.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/projects/comparator/comparator_schematics.png" class="img-fluid" %}
 *Single-tail StrongARM comparator schematic.*
 
 ## Measuring the Regeneration Time Constant
@@ -55,7 +55,7 @@ To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN f
 
 During every reset phase, both outputs were correctly precharged to VDD. During evaluation, the outputs regenerated to full logic levels, and the output polarity inverted cleanly as VIN crossed the reference voltage. No metastable stalls or incomplete output transitions were observed, confirming correct reset behavior, polarity, and rail-to-rail regeneration.
 
-{% include figure.liquid path="assets/img/projects/comparator/comparator_bringup.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/projects/comparator/comparator_bring_up.png" class="img-fluid" %}
 *Transient simulation showing VIN crossing the 1.0 V reference. The comparator produces one full-swing decision each clock cycle and cleanly reverses polarity at the crossing point.*
 
 ## Measured Performance
@@ -88,5 +88,3 @@ Future work will therefore focus on Monte Carlo mismatch analysis, post-layout e
 ## Reference
 
 [1] B. Razavi, "The StrongARM Latch," *IEEE Solid-State Circuits Magazine*, vol. 7, no. 2, pp. 12–17, Spring 2015.
-
-© Copyright 2026 Min Aung Thu.
