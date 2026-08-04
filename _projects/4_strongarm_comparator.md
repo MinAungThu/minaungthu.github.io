@@ -53,10 +53,6 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | Supply Voltage                   | 1.8 V    |
 | Clock Frequency                  | 100 MHz  |
 | Systematic Input-Referred Offset | < 1 mV  |
-| Regeneration Time Constant       | 23.9 ps  |
-| Fixed Delay                      | 75.6 ps  |
-| Delay Fit (R²)                   | 0.988    |
-
 
  
 ### Device Dimensions
