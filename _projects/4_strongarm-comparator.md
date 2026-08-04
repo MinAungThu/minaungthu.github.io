@@ -2,7 +2,7 @@
 layout: page
 title: StrongARM Latched Comparator
 description: TSMC 0.18 µm CMOS — design, verification, and regeneration-time extraction
-img: assets/img/comparator_preview.png
+img: assets/img/projects/comparator/comparator_schematic.png
 importance: 2
 category: Analog / Mixed-Signal IC Design
 ---
@@ -28,7 +28,7 @@ During reset (CLK low), the tail transistor is turned off while the precharge tr
 
 During evaluation (CLK high), the tail transistor turns on and the differential input pair begins discharging the internal nodes. Any voltage difference between the two inputs creates a small imbalance, which is rapidly amplified once the cross-coupled latch enters regeneration. Positive feedback then drives one output to VDD and the other to ground, producing a full-swing digital decision every clock cycle.
 
-{% include figure.liquid path="assets/img/comparator_schematic.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/projects/comparator/comparator_schematic.png" class="img-fluid" %}
 *Single-tail StrongARM comparator schematic.*
 
 ## Measuring the Regeneration Time Constant
@@ -55,7 +55,7 @@ To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN f
 
 During every reset phase, both outputs were correctly precharged to VDD. During evaluation, the outputs regenerated to full logic levels, and the output polarity inverted cleanly as VIN crossed the reference voltage. No metastable stalls or incomplete output transitions were observed, confirming correct reset behavior, polarity, and rail-to-rail regeneration.
 
-{% include figure.liquid path="assets/img/comparator_bringup.png" class="img-fluid" %}
+{% include figure.liquid path="assets/img/projects/comparator/comparator_bringup.png" class="img-fluid" %}
 *Transient simulation showing VIN crossing the 1.0 V reference. The comparator produces one full-swing decision each clock cycle and cleanly reverses polarity at the crossing point.*
 
 ## Measured Performance
@@ -82,8 +82,6 @@ During every reset phase, both outputs were correctly precharged to VDD. During 
 ## Limitations and Future Work
 
 This project was completed at the schematic level, so several practical non-idealities remain to be investigated.
-
-The reported input-referred offset reflects only systematic behavior. In fabricated circuits, random device mismatch is typically the dominant contributor and should be evaluated through Monte Carlo simulations. Likewise, kickback noise cannot be accurately assessed without post-layout parasitic extraction and a realistic input source impedance.
 
 Future work will therefore focus on Monte Carlo mismatch analysis, post-layout extraction, kickback characterization, and noise analysis to evaluate the comparator under more realistic operating conditions.
 
