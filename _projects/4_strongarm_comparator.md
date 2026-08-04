@@ -31,6 +31,7 @@ During evaluation (CLK high), the tail transistor turns on and the differential 
 
 _Single-tail StrongARM comparator schematic._
 
+
 ## Functional Validation
 
 To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN from 975 mV using a piecewise-linear source. The comparator was clocked at 100 MHz using a 1.8 V clock.
@@ -57,6 +58,7 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | Delay Fit (R²)                   | 0.988    |
 
 
+ 
 ### Device Dimensions
 
 | Device           |   Function                   | Width |
@@ -66,6 +68,7 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | NM3 / NM4        |   Cross-coupled NMOS latch   | 16 µm |
 | PMOS latch       |   Cross-coupled PMOS         | 12 µm |
 | PMOS precharge   |   Reset switches             | 4 µm  |
+
 
 
 ## Limitations and Future Work
