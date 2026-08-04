@@ -31,7 +31,6 @@ During evaluation (CLK high), the tail transistor turns on and the differential 
 
 _Single-tail StrongARM comparator schematic._
 
-
 ## Functional Validation
 
 To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN from 975 mV using a piecewise-linear source. The comparator was clocked at 100 MHz using a 1.8 V clock.
@@ -40,39 +39,33 @@ During every reset phase, both outputs were correctly precharged to VDD. During 
 
 The output switched within approximately **0.5 mV** of the 1.0 V reference, indicating a very small systematic input-referred offset. Because the input ramp advances by a few millivolts each clock cycle, this value should be treated as an upper bound rather than an exact measurement. A finer quasi-static input sweep would be needed to determine the true offset more accurately.
 
-
 {% include figure.liquid path="/assets/img/projects/comparator/bringup.png" class="img-fluid rounded z-depth-1" %}
 
 _Transient simulation showing VIN crossing the 1.0 V reference. The comparator produces one full-swing decision each clock cycle and cleanly reverses polarity at the crossing point._
 
-
 ## Measured Performance
 
-| Parameter                        | Value    |
-| -------------------------------- | -------- |
-| Supply Voltage                   | 1.8 V    |
-| Clock Frequency                  | 100 MHz  |
+| Parameter                        | Value   |
+| -------------------------------- | ------- |
+| Supply Voltage                   | 1.8 V   |
+| Clock Frequency                  | 100 MHz |
 | Systematic Input-Referred Offset | < 1 mV  |
 
- 
 ### Device Dimensions
 
-| Device           |   Function                   | Width |
-| --------------   |   ------------------------   | ----- |
-| NM0 / NM1        |   Differential input pair    | 20 µm |
-| NM2              |   Clocked tail transistor    | 30 µm |
-| NM3 / NM4        |   Cross-coupled NMOS latch   | 16 µm |
-| PMOS latch       |   Cross-coupled PMOS         | 12 µm |
-| PMOS precharge   |   Reset switches             | 4 µm  |
-
-
+| Device         | Function                 | Width |
+| -------------- | ------------------------ | ----- |
+| NM0 / NM1      | Differential input pair  | 20 µm |
+| NM2            | Clocked tail transistor  | 30 µm |
+| NM3 / NM4      | Cross-coupled NMOS latch | 16 µm |
+| PMOS latch     | Cross-coupled PMOS       | 12 µm |
+| PMOS precharge | Reset switches           | 4 µm  |
 
 ## Limitations and Future Work
 
 Since this project was completed at the schematic level, mismatch, parasitic effects, and kickback have not yet been characterized.
 
 Future work will therefore focus on Monte Carlo mismatch analysis, post-layout extraction, kickback characterization, and noise analysis to evaluate the comparator under more realistic operating conditions.
-
 
 ## Reference
 
