@@ -60,6 +60,7 @@ During every reset phase, both outputs were correctly precharged to VDD. During 
 
 _Transient simulation showing VIN crossing the 1.0 V reference. The comparator produces one full-swing decision each clock cycle and cleanly reverses polarity at the crossing point._
 
+
 ## Measured Performance
 
 | Parameter                        | Value    |
@@ -71,6 +72,7 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | Fixed Delay                      | 75.6 ps  |
 | Delay Fit (R²)                   | 0.988    |
 
+
 ### Device Dimensions
 
 | Device         | Function                 | Width |
@@ -81,11 +83,13 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | PMOS latch     | Cross-coupled PMOS       | 12 µm |
 | PMOS precharge | Reset switches           | 4 µm  |
 
+
 ## Limitations and Future Work
 
 This project was completed at the schematic level, so several practical non-idealities remain to be investigated.
 
 Future work will therefore focus on Monte Carlo mismatch analysis, post-layout extraction, kickback characterization, and noise analysis to evaluate the comparator under more realistic operating conditions.
+
 
 ## Reference
 
