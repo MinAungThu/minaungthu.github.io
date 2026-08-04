@@ -410,6 +410,11 @@ ninja.data = [{
           description: "TSMC 0.18 µm CMOS, reproducing a research paper with new 2nd stage design",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_2stage_opamp/";
+            },},{id: "projects-strongarm-latched-comparator",
+          title: 'StrongARM Latched Comparator',
+          description: "TSMC 0.18 µm CMOS — design, verification, and regeneration-time extraction",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_strongarm-comparator/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
