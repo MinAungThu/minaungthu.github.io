@@ -7,11 +7,13 @@ importance: 3
 category: work
 ---
 
-A two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic level), designed as a reproduction of a published reference [1]. Applying the reference sizing directly produced a second stage that operated in triode mode, with the output pinned near the rail. Re-deriving the output-device sizing from the reference's own zero-offset condition returned the stage to saturation and improved gain, phase margin, and power. Final performance: **80.1 dB gain, 35.3 MHz GBW, 71° phase margin, 133 µW** at 1.8 V.
+
+In an attempt to dive into the world of op-amps and its intricacies, I reproduced the reference [1] and designed a two-stage, Miller-compensated CMOS op-amp in TSMC 0.18 µm (ADS, schematic level). When I tried to directly apply the reference sizing, it produced a second stage that operated in triode mode, with the output pinned near the rail. To avoid operating in the triode region, I rederived the output sizing from the reference’s own zero offset conditions and was able to drive the MOSFET to saturation, improving gain, phase margin and power. Final performance is as described - **80.1 dB gain, 35.3 MHz GBW, 71° phase margin, 133 µW** at 1.8 V.  
 
 ## Architecture
 
-NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6). Miller capacitor Cc with nulling resistor Rc compensates around the second stage; a diode-connected reference (M8) mirrors bias to the tail (M7) and load (M6). All signal devices use L = 1 µm; intrinsic gain collapses at minimum length in this process, rendering the target DC gain unreachable.
+The architecture is classic 2-stage op-amp topology with NMOS input pair (M4/M5) with PMOS mirror load (M1/M2), driving a PMOS common-source second stage (M3) with an NMOS current-source load (M6).  There is a Miller capacitor Cc with nulling resistor Rc which compensates around the second stage. A diode-connected reference (M8) mirrors bias current to the tail (M7) and load (M6). All signal devices use L = 1 µm as the intrinsic gain collapses at minimum length in this process, rendering the target DC gain unreachable. 
+
 
 {% include figure.liquid path="/assets/img/projects/2stage_opamp/opamp_schematic.png" class="img-fluid rounded z-depth-1" %}
 
@@ -26,6 +28,7 @@ The reference paper specifies the second-stage device at minimum length (0.18 µ
 | \|V_DS\|                       | 1.8 − 1.42 = 0.38 V    |
 | \|V_OV\| = \|V_GS\| − \|V_TH\| | 1.26 − ≈0.45 = ≈0.81 V |
 | \|V_DS\| vs \|V_OV\|           | 0.38 V < 0.81 V        |
+
 
 \|V_DS\| < \|V_OV\| is the textbook triode condition. \|V_TH\| here is an approximation rather than a direct measurement. This triode region possibility was assumed as the second stage contributes little gain and Miller pole-splitting fails, matching the observed insensitivity of DC gain to bias and loss of Cc's authority over GBW. I have resized
 the device to L = 1 µm and re-derived W ≈ 85 µm from the zero-offset condition, returning the output to mid-rail with both output devices saturated. DC gain then rose from ~73 dB to ~80 dB and the amplifier responded to compensation as expected.
