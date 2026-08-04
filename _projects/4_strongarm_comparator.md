@@ -7,7 +7,7 @@ importance: 4
 category: work
 ---
 
-A comparator is the circuit that converts a small analog voltage difference into a digital decision. It is a fundamental building block of analog-to-digital converters (ADCs), sensing interfaces, and mixed-signal systems, where its speed, offset, and energy consumption directly influence overall performance.
+A comparator is the circuit that converts a small analog voltage difference into a digital decision based on the reference voltage and internal circuitry. I was curious about ADCs and I believe that a comparator would be a good starting point to understand the mixed-signal systems where the speed, offset, and energy consumption directly influence overall performance.
 
 To better understand these trade-offs, I designed and characterized a single-tail StrongARM latched comparator in TSMC 0.18 µm CMOS using Cadence Virtuoso (schematic level). Beyond verifying functional operation, I measured its systematic input-referred offset, extracted the latch regeneration time constant from transient simulations using Python, and interpreted the measured behavior using the framework described by Razavi [1].
 
@@ -84,8 +84,6 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 ## Limitations and Future Work
 
 This project was completed at the schematic level, so several practical non-idealities remain to be investigated.
-
-The reported input-referred offset reflects only systematic behavior. In fabricated circuits, random device mismatch is typically the dominant contributor and should be evaluated through Monte Carlo simulations. Likewise, kickback noise cannot be accurately assessed without post-layout parasitic extraction and a realistic input source impedance.
 
 Future work will therefore focus on Monte Carlo mismatch analysis, post-layout extraction, kickback characterization, and noise analysis to evaluate the comparator under more realistic operating conditions.
 
