@@ -7,7 +7,7 @@ importance: 4
 category: work
 ---
 
-A comparator is the circuit that converts a small analog voltage difference into a digital decision based on the reference voltage and internal circuitry. I was curious about ADCs and I believe that a comparator would be a good starting point to understand the mixed-signal systems where the speed, offset, and energy consumption directly influence overall performance.
+A comparator is the circuit that converts a small analog voltage difference into a digital decision based on the reference voltage and internal circuitry. Because it is the fundamental decision element in ADCs and many mixed-signal systems, I chose the StrongARM latch as a starting point for studying high-speed dynamic comparator design.
 
 To better understand these trade-offs, I designed and verified a single-tail StrongARM latched comparator in TSMC 0.18 µm CMOS using Cadence Virtuoso (schematic level). I confirmed correct reset, regeneration, and decision behavior in transient simulation, and interpreted the circuit using the framework described by Razavi [1].
 
@@ -15,7 +15,7 @@ To better understand these trade-offs, I designed and verified a single-tail Str
 
 - Designed a single-tail StrongARM comparator in TSMC 0.18 µm CMOS.
 - Verified reset behavior, regeneration, and decision polarity in transient simulation.
-- Observed a sub-millivolt systematic offset from the output trip point relative to the reference.
+- Observed a systematic input-referred offset below 1 mV from the simulated switching point.
 
 ## Operating Principle
 
@@ -31,7 +31,7 @@ During evaluation (CLK high), the tail transistor turns on and the differential 
 
 _Single-tail StrongARM comparator schematic._
 
-## Measuring the Regeneration Time Constant
+## Functional Validation
 
 To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN from 975 mV using a piecewise-linear source. The comparator was clocked at 100 MHz using a 1.8 V clock.
 
@@ -51,7 +51,7 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 | -------------------------------- | -------- |
 | Supply Voltage                   | 1.8 V    |
 | Clock Frequency                  | 100 MHz  |
-| Systematic Input-Referred Offset | < ~1 mV  |
+| Systematic Input-Referred Offset | < 1 mV  |
 | Regeneration Time Constant       | 23.9 ps  |
 | Fixed Delay                      | 75.6 ps  |
 | Delay Fit (R²)                   | 0.988    |
@@ -70,7 +70,7 @@ _Transient simulation showing VIN crossing the 1.0 V reference. The comparator p
 
 ## Limitations and Future Work
 
-This project was completed at the schematic level, so several practical non-idealities remain to be investigated.
+Since this project was completed at the schematic level, mismatch, parasitic effects, and kickback have not yet been characterized.
 
 Future work will therefore focus on Monte Carlo mismatch analysis, post-layout extraction, kickback characterization, and noise analysis to evaluate the comparator under more realistic operating conditions.
 
