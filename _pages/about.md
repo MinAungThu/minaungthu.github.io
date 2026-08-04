@@ -1,4 +1,4 @@
----
+<img width="468" height="13" alt="image" src="https://github.com/user-attachments/assets/0b151fbe-7c47-4841-915d-f9249ea27436" />---
 layout: about
 title: about
 permalink: /
@@ -27,6 +27,6 @@ latest_posts:
 
 I love designing at the transistor level, where the theory and the silicon meet.
 
-Looking to build RF/analog/mixed-signal design blocks for radio frequency, high-speed, and biomedical applications.
+Looking to build RF/analog/mixed-signal design blocks for radio frequency, high-speed, and low-power biomedical applications.
 
 Previously, I did research on a 5.23–5.86 GHz complementary LC-VCO in TSMC 0.18 µm CMOS with a 3-bit switched-capacitor bank (−116.4 dBc/Hz at 1 MHz, 6.48 mW, FoM −182.7 dB) under the supervision of <a href="https://ee.ccu.edu.tw/p/412-1097-667.php?Lang=en" target="_blank">Professor Janne-Wha Wu</a> at <a href="https://sites.google.com/a/ee.ccu.edu.tw/wireless-communication-lab/home?authuser=0" target="_blank">Wireless Communication Lab</a> in National Chung Cheng University, Taiwan.
