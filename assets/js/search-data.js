@@ -412,9 +412,9 @@ ninja.data = [{
               window.location.href = "/projects/3_2stage_opamp/";
             },},{id: "projects-strongarm-latched-comparator",
           title: 'StrongARM Latched Comparator',
-          description: "TSMC 0.18 µm CMOS — design, verification, and regeneration-time extraction",
+          description: "TSMC 0.18 µm CMOS, single-tail StrongARM latch with regeneration-time extraction",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_strongarm-comparator/";
+              window.location.href = "/projects/4_strongarm_comparator/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
