@@ -23,7 +23,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<p style="margin-top: -0.75rem; font-size: 0.95rem; font-family: monospace; color: var(--global-text-color-light);">Junior Year Student, Robotics &amp; Automation Systems Engineering, Kasetsart University</p>
+<p style="margin-top: -0.75rem; font-size: 0.95rem; color: var(--global-text-color-light);">Junior Year Student, Robotics &amp; Automation Systems Engineering, Kasetsart University</p>
 
 I love designing at the transistor level, where the theory and the silicon meet.
 
