@@ -37,7 +37,7 @@ To verify correct operation, I held VIP at a 1.0 V reference while ramping VIN f
 
 During every reset phase, both outputs were correctly precharged to VDD. During evaluation, the outputs regenerated to full logic levels, and the output polarity inverted cleanly as VIN crossed the reference voltage. No metastable stalls or incomplete output transitions were observed, confirming correct reset behavior, polarity, and rail-to-rail regeneration.
 
-The output switched within approximately **0.5 mV** of the 1.0 V reference, indicating a very small systematic input-referred offset. Because the input ramp advances by a few millivolts each clock cycle, this value should be treated as an upper bound rather than an exact measurement. A finer quasi-static input sweep would be needed to determine the true offset more accurately.
+The output switched within approximately **0.5 mV** of the 1.0 V reference, indicating a very small systematic input-referred offset. Because the input ramp advances by a few millivolts each clock cycle, this value should be treated as an upper bound rather than an exact measurement. A finer input sweep would be needed to determine the true offset more accurately.
 
 {% include figure.liquid path="/assets/img/projects/comparator/bringup.png" class="img-fluid rounded z-depth-1" %}
 
